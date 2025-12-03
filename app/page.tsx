@@ -204,8 +204,6 @@ export default function PublicPage() {
           </div>
           
           <div className="flex gap-8 text-xs font-mono tracking-wider">
-            <Link href="https://linkedin.com" className="hover:text-cyan-400 transition-colors">LINKEDIN</Link>
-            <Link href="https://github.com" className="hover:text-cyan-400 transition-colors">GITHUB</Link>
             <Link href="/mindhub" className="text-slate-600 hover:text-red-500 transition-colors flex items-center gap-2">
                [ USA I MIEI PROGETTI SEGRETI ]
             </Link>
