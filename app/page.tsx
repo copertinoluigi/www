@@ -43,10 +43,10 @@ const projects = [
     color: "bg-indigo-50 border-indigo-200 text-indigo-700",
   },
   {
-    title: "Cantina Tre Copertino",
-    category: "E-Commerce & Brand",
-    desc: "Digitalizzazione di una tradizione vinicola familiare.",
-    tags: ["E-commerce", "Storytelling", "Brand Identity"],
+    title: "MonitorFinder",
+    category: "Blog Authority",
+    desc: "Sito comparativo di monitor Gaming / Ufficio.",
+    tags: ["E-commerce", "Affiliate", "Brand Identity"],
     color: "bg-red-50 border-red-200 text-red-700",
   },
   {
@@ -63,42 +63,21 @@ export default function LandingPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  // Gestione Form (Semplificata)
-  async function handleSubmit(e: any) {
-    e.preventDefault();
-    setLoading(true);
-
-    const formData = new FormData(e.target);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-
-    try {
-      // Decommenta quando hai collegato Supabase
-      /*
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-      );
-      await supabase.from('contacts').insert([data]);
-      */
-      
-      // Simulazione successo
-      setTimeout(() => {
-        setSent(true);
-        setLoading(false);
-      }, 1000);
-      
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-    }
-  }
-
-  return (
-    <div className="flex flex-col min-h-screen">
+<div className="bg-white text-slate-900 p-8 rounded-2xl shadow-xl text-center">
+  <h3 className="text-2xl font-bold mb-4">Parliamo del tuo progetto</h3>
+  <p className="text-slate-600 mb-8">
+    Preferisco il contatto diretto. Scrivimi una mail spiegando brevemente la tua idea.
+  </p>
+  
+  <Button asChild size="lg" className="w-full bg-blue-600 hover:bg-blue-700 h-14 text-lg">
+    <a href="mailto:tuamail@gmail.com?subject=Richiesta%20Consulenza%20da%20Sito%20Web">
+      <Send className="mr-2 w-5 h-5" /> Invia Email a Luigi
+    </a>
+  </Button>
+  
+  <p className="text-xs text-slate-500 mt-6">
+    Rispondo solitamente entro 24 ore.
+  </p>
       
       {/* --- NAVBAR --- */}
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200">
