@@ -1,67 +1,66 @@
 "use client";
 
 import Link from "next/link";
-import { LayoutDashboard, Home, Wrench, ExternalLink, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, Search, ExternalLink, ArrowLeft, Lock } from "lucide-react";
 
-// LE TUE APP
+// LE TUE APP SEGRETE
 const myApps = [
   {
     name: "MindHub Dashboard",
     url: "https://mindhub-vercel.vercel.app/",
     icon: LayoutDashboard,
-    desc: "Statistiche e Finanze",
+    desc: "Mission Control Center",
     color: "bg-indigo-50 border-indigo-200 text-indigo-900"
   },
   {
-    name: "Ausing Admin",
-    url: "https://ausing.it/wp-admin",
-    icon: Home,
-    desc: "Gestione Ville",
-    color: "bg-blue-50 border-blue-200 text-blue-900"
-  },
-  {
-    name: "HelpMe Admin",
-    url: "https://helpme-pisticci.it/admin",
-    icon: Wrench,
-    desc: "Gestione Segnalazioni",
-    color: "bg-orange-50 border-orange-200 text-orange-900"
+    name: "MonitorFinder",
+    url: "#", // <--- Inserisci qui l'URL reale se ce l'hai
+    icon: Search,
+    desc: "Tracking Prezzi & Disponibilità",
+    color: "bg-emerald-50 border-emerald-200 text-emerald-900"
   },
 ];
 
 export default function MindHubLauncher() {
   return (
-    <div className="min-h-screen bg-slate-100 p-6 flex flex-col items-center justify-center font-sans">
+    <div className="min-h-screen bg-slate-950 p-6 flex flex-col items-center justify-center font-sans text-slate-200">
       
-      <div className="w-full max-w-2xl mb-8 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-slate-800">MindHub Launcher 🚀</h1>
+      {/* Header Scuro */}
+      <div className="w-full max-w-xl mb-12 flex justify-between items-center">
+        <div className="flex items-center gap-2">
+            <Lock className="w-5 h-5 text-indigo-400"/>
+            <h1 className="text-xl font-bold tracking-wider text-white">SECRET PROJECTS</h1>
+        </div>
         <Link 
           href="/"
-          className="inline-flex items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900"
+          className="text-xs font-medium text-slate-500 hover:text-white transition-colors uppercase tracking-widest"
         >
-          <ArrowLeft className="w-4 h-4 mr-2"/> Torna al sito
+          Exit
         </Link>
       </div>
 
-      <div className="grid gap-6 w-full max-w-2xl sm:grid-cols-2">
+      {/* Grid Carte */}
+      <div className="grid gap-6 w-full max-w-xl sm:grid-cols-2">
         {myApps.map((app, idx) => (
-          <a key={idx} href={app.url} target="_blank" rel="noopener noreferrer" className="block h-full">
-            <div className={`h-full rounded-xl border-2 p-6 transition-all hover:shadow-lg hover:-translate-y-1 bg-white ${app.color}`}>
-              <div className="flex flex-row items-center justify-between pb-2 mb-2">
-                <h3 className="text-lg font-bold">{app.name}</h3>
-                <app.icon className="h-6 w-6 opacity-70" />
-              </div>
-              <div>
-                <p className="text-sm font-medium opacity-80 mb-4">{app.desc}</p>
-                <div className="flex items-center text-xs font-bold uppercase tracking-wider opacity-60">
-                  Apri <ExternalLink className="ml-1 w-3 h-3" />
+          <a key={idx} href={app.url} target="_blank" rel="noopener noreferrer" className="block h-full group">
+            <div className="h-full rounded-2xl border border-slate-800 bg-slate-900/50 p-8 transition-all duration-300 hover:bg-slate-800 hover:border-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/10">
+              <div className="flex justify-between items-start mb-6">
+                <div className={`p-3 rounded-lg ${app.color}`}>
+                    <app.icon className="h-6 w-6" />
                 </div>
+                <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-white transition-colors" />
               </div>
+              
+              <h3 className="text-lg font-bold text-white mb-2">{app.name}</h3>
+              <p className="text-sm font-medium text-slate-400">{app.desc}</p>
             </div>
           </a>
         ))}
       </div>
       
-      <p className="mt-12 text-slate-400 text-xs">Accesso Riservato - Luigi Copertino</p>
+      <p className="mt-16 text-slate-700 text-[10px] uppercase tracking-[0.2em]">
+        Authorized Personnel Only • ID: LC-8821
+      </p>
     </div>
   );
 }
