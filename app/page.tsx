@@ -197,8 +197,8 @@ export default function PublicPage() {
           <div className="flex gap-6">
             <Link href="https://linkedin.com" target="_blank" className="hover:text-blue-600 transition-colors">LinkedIn</Link>
             <Link href="https://github.com" target="_blank" className="hover:text-blue-600 transition-colors">GitHub</Link>
-            <Link href="/mindhub" className="text-slate-400 hover:text-slate-900 transition-colors">
-              Hub
+            <Link href="/mindhub" className="text-slate-400 hover:text-slate-900 transition-colors font-medium">
+              Usa i miei progetti segreti
             </Link>
           </div>
         </div>
