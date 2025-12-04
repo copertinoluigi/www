@@ -180,7 +180,7 @@ export default function PublicPage() {
               </p>
               
               <a 
-                href="mailto:copertino.luigi@gmail.com?subject=Inizia%20Protocollo%20Collaborazione"
+                href="mailto:info@luigicopertino.it?subject=Inizia%20Protocollo%20Collaborazione"
                 className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-cyan-400 hover:scale-105 transition-all duration-300"
               >
                 <Send size={18} />
